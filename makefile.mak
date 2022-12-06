@@ -1,9 +1,7 @@
 FLAGS = -Wall -g
 
-all: connections
-
-connections: main.o my_mat.o
-	gcc $(FLAGS) -o connections main.o my_mat.o
+main: main.o my_mat.o
+	gcc $(FLAGS) -o main main.o my_mat.o
 
 main.o: main.c my_mat.h
 	gcc $(FLAGS)  -c main.c
@@ -11,6 +9,7 @@ main.o: main.c my_mat.h
 my_mat.o: my_mat.c my_mat.h
 	gcc $(FLAGS) -c my_mat.c
 
-.PHONY: clean all
+.PHONY: clean
 
-clean: rm -f *.o *.a connections
+clean: rm -f *.o *.a main
+
