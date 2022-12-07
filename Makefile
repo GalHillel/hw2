@@ -19,4 +19,4 @@ my_mat.o: my_mat.c my_mat.h
 	$(CC) $(FLAGS) -c my_mat.c
 
 clean:
-	rm -f *.o connections
+	rm -f *.o connections my_mat.h
